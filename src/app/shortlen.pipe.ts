@@ -5,10 +5,10 @@ import {Pipe, PipeTransform} from '@angular/core';
   name: 'shortlen'
 })
 export class ShortlenPipe implements PipeTransform {
-  transform(value: any) {
-    console.log(value);
-    if (value.length > 10) {
-      return value.substr(0, 10) + ' ...';
+  transform(value: any , size:number) {
+    console.log(value, size);
+    if (value.length > size) {
+      return value.substr(0, size) + ' ...';
     } else {
       return value;
     }
